@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   has_many :followers, through: :passive_relationships, source: :follower
 
+  has_many :likes, dependent: :destroy
+
   attr_accessor :remember_token
 
   before_save { self.email = email.downcase }
@@ -83,5 +85,9 @@ class User < ActiveRecord::Base
   # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  def likes?(micropost)
+    micropost.likes.where(user_id: id).any?
   end
 end
