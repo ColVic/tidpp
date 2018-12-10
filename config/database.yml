@@ -1,0 +1,28 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: static_page_development
+  adapter: postgresql
+  encoding: unicode
+  database: static_page_development
+  pool: 5
+  username: colvic
+  password: qwerty
+
+test:
+  <<: *default
+  database: static_page_test
+
+production:
+  <<: *default
+  database: static_page_production
+  username: static_page
+  password: <%= ENV['STATIC_PAGE_DATABASE_PASSWORD'] %>
