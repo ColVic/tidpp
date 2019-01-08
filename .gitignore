@@ -16,11 +16,11 @@ log/development.log
 
 /log/*.log
 /tmp/*
-/tmp
 
 .DS_Store
 .keep
 public/assets/source_maps
+public/uploads/
 /.idea
 *.sublime-project
 *.sublime-workspace
