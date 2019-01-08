@@ -9,11 +9,13 @@
 /config/sidekiq.yml
 /config/ldap.yml
 /config/adapters.yml
+log/development.log
 
 /coverage/*
 /spec/fixtures/api
 
 /log/*.log
+/tmp/*
 /tmp
 
 .DS_Store

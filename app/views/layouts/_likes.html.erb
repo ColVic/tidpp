@@ -5,7 +5,3 @@
 <% end %>
 
 <%= micropost.likes.count %>
-
-<% micropost.likes.each do |like| %>
-  <%= gravatar_for(like.user, size = 10) %>
-<% end %>
